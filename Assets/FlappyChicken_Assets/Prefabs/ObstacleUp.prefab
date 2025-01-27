@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1500577582968341212, guid: d2fd5785cd1f9454b9e25b354d7e2d0f, type: 3}
       propertyPath: m_Name
-      value: Obstacle
+      value: ObstacleUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569629428728008614, guid: d2fd5785cd1f9454b9e25b354d7e2d0f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3569629428728008614, guid: d2fd5785cd1f9454b9e25b354d7e2d0f, type: 3}
       propertyPath: m_LocalPosition.x
