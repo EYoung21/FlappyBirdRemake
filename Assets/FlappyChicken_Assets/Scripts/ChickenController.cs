@@ -1,5 +1,10 @@
+using Mono.Cecil.Cil;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+// using System.Collections;
+// using System.Collections.Generic;
 
 public class ChickenController : MonoBehaviour
 {
@@ -21,10 +26,24 @@ public class ChickenController : MonoBehaviour
     public Sprite spriteUp;
     public Sprite spriteDown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int currScore = 0;
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Obstacle")) 
+        if (other.gameObject.CompareTag("Obstacle")) {
             ReloadScene();
+        } else if (other.gameObject.CompareTag("ScoreTrack")) {
+            currScore++;
+            _chickenAudioSource.Play(); //should play bing chilling
+        }
+    }
+
+    // private void OnTriggerEnter2D(Collision2D collision) {
+    //     currScore++;
+    //     _chickenAudioSource.Play(); //should play bing chilling
+    // }
+
+    private void OnTriggerEnter2D(Collision2D other) {
+        
     }
 
     private void ReloadScene() {

@@ -433,8 +433,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 405cdc73f00624e8b828c56f41bbb16b, type: 3}
-  m_Resource: {fileID: 8300000, guid: 405cdc73f00624e8b828c56f41bbb16b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: de732159651014d1199d77afab00d3a5, type: 3}
+  m_Resource: {fileID: 8300000, guid: de732159651014d1199d77afab00d3a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1068,6 +1068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottom: {fileID: 1500577582968341212, guid: d2fd5785cd1f9454b9e25b354d7e2d0f, type: 3}
   top: {fileID: 3333281190037051390, guid: 0d37ec14cbf03433a9fe8c695841b464, type: 3}
+  scoreTracker: {fileID: 2944584973437477101, guid: 7d40a659f5d8d4caeb21cafa4b2f1430, type: 3}
   spawnTimer: 2
 --- !u!4 &2033739707 stripped
 Transform:

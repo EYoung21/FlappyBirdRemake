@@ -6,6 +6,8 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject bottom;
     public GameObject top;
 
+    public GameObject scoreTracker;
+
     private float _currentTimer;
     public float spawnTimer;
 
@@ -25,6 +27,11 @@ public class ObstacleSpawner : MonoBehaviour
         
         Instantiate(bottom, spawnPositionDown, Quaternion.identity);
         Instantiate(top, spawnPositionUp, Quaternion.identity);
+
+        Vector3 shiftRight = new Vector3(1, 0, 0);
+        Vector3 scoreTrackerSpawnPosition = transform.position + downVector + upVector + shiftRight; //shift right by 1
+
+        Instantiate(scoreTracker, scoreTrackerSpawnPosition, Quaternion.identity);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
