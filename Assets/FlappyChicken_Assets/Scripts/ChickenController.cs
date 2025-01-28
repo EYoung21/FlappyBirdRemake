@@ -2,12 +2,15 @@ using Mono.Cecil.Cil;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // using System.Collections;
 // using System.Collections.Generic;
 
 public class ChickenController : MonoBehaviour
 {
+
+    public Text scoreText;
 
     public AudioClip[] flappySounds;
 
@@ -31,10 +34,11 @@ public class ChickenController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Obstacle")) {
             ReloadScene();
-        } else if (other.gameObject.CompareTag("ScoreTrack")) {
-            currScore++;
-            _chickenAudioSource.Play(); //should play bing chilling
-        }
+        } 
+        // else if (other.gameObject.CompareTag("ScoreTrack")) {
+        //     currScore++;
+        //     _chickenAudioSource.Play(); //should play bing chilling
+        // }
     }
 
     // private void OnTriggerEnter2D(Collision2D collision) {
@@ -42,8 +46,9 @@ public class ChickenController : MonoBehaviour
     //     _chickenAudioSource.Play(); //should play bing chilling
     // }
 
-    private void OnTriggerEnter2D(Collision2D other) {
-        
+    private void OnTriggerEnter2D(Collider2D other) {
+        currScore++;
+        _chickenAudioSource.Play(); //should play bing chilling
     }
 
     private void ReloadScene() {
@@ -92,5 +97,7 @@ public class ChickenController : MonoBehaviour
 
         Vector2 normalizedDir = chickenRigidbody.linearVelocity.normalized;
         transform.right = normalizedDir;
+
+        scoreText.text = "Current Score: " + currScore.ToString();
     }
 }
