@@ -1,4 +1,5 @@
 using Mono.Cecil.Cil;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,7 @@ using UnityEngine.UI;
 public class ChickenController : MonoBehaviour
 {
 
-    public Text scoreText;
+    public TextMeshPro scoreText;
 
     public AudioClip[] flappySounds;
 
@@ -49,6 +50,7 @@ public class ChickenController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         currScore++;
         _chickenAudioSource.Play(); //should play bing chilling
+        scoreText.text = "SCORE: " + currScore.ToString();
     }
 
     private void ReloadScene() {
